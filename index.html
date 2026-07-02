@@ -54,8 +54,9 @@ fbq('init','2256958851719825');fbq('track','PageView');
   --sh-lg:0 32px 72px -28px rgba(10,56,72,0.35);
   --sh-orange:0 8px 22px -8px rgba(232,122,40,0.55);
 }
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:#FDFCFA;line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);background:#FDFCFA;line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;width:100%}
+img{max-width:100%}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -130,7 +131,7 @@ header{position:sticky;top:0;background:rgba(253,252,250,0.88);backdrop-filter:s
 .hero-kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange-bright);flex-shrink:0;animation:kickerPulse 2s ease-in-out infinite}
 @keyframes kickerPulse{0%,100%{opacity:1}50%{opacity:0.4}}
 .hero-kicker-value{font-weight:800;font-style:italic;color:var(--orange-bright)}
-.hero h1{font-size:clamp(36px,5.6vw,68px);font-weight:800;letter-spacing:-0.035em;line-height:1.04;margin-bottom:var(--s5)}
+.hero h1{font-size:clamp(30px,4.2vw,50px);font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-bottom:var(--s5)}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.88);font-size:13px;font-weight:600;padding:8px 18px;border-radius:99px;margin-bottom:var(--s4);backdrop-filter:blur(10px)}
 .hero-eyebrow-dot{width:8px;height:8px;background:#4ADE80;border-radius:50%;box-shadow:0 0 12px #4ADE80;animation:pulse 2.4s ease-in-out infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
@@ -233,7 +234,7 @@ header{position:sticky;top:0;background:rgba(253,252,250,0.88);backdrop-filter:s
 /* ============ GUARANTEE ============ */
 .guarantee{background:#fff;padding:var(--sec) 0}
 .guarantee-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.guarantee-card{background:linear-gradient(135deg,var(--cream) 0%,#fff 100%);border:1px solid var(--line);border-left:4px solid var(--orange);padding:46px 40px;border-radius:var(--r-xl);position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.guarantee-card{background:linear-gradient(135deg,var(--cream) 0%,#fff 100%);border:1px solid var(--line);padding:46px 40px;border-radius:var(--r-xl);position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
 .guarantee-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .guarantee-card::before{content:"";position:absolute;top:-30px;right:-30px;width:170px;height:170px;background:radial-gradient(circle,rgba(232,122,40,0.12) 0%,transparent 70%);pointer-events:none}
 .guarantee-shield{width:56px;height:56px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:var(--s5);color:#fff;box-shadow:var(--sh-orange)}
@@ -321,9 +322,12 @@ header{position:sticky;top:0;background:rgba(253,252,250,0.88);backdrop-filter:s
 <style>
 /* ============ CASES ============ */
 .cases{background:var(--cream);padding:var(--sec) 0}
-.hardnumber-pill{max-width:100%;flex-wrap:wrap;display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line-strong);border-radius:99px;padding:10px 22px 10px 18px;margin-bottom:var(--s7)}
-.hardnumber-value{font-size:18px;font-weight:800;font-style:italic;color:var(--orange);white-space:nowrap}
-.hardnumber-label{font-size:13px;color:var(--muted);font-weight:600;line-height:1.45}
+.hardnumber-pill{display:inline-flex;align-items:center;gap:16px;max-width:100%;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:var(--r-md);padding:16px 24px;margin-bottom:var(--s7);box-shadow:var(--sh-sm)}
+.hardnumber-icon{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:rgba(232,122,40,0.12);color:var(--orange);display:flex;align-items:center;justify-content:center}
+.hardnumber-icon svg{width:24px;height:24px}
+.hardnumber-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+.hardnumber-value{font-size:16.5px;font-weight:800;font-style:italic;color:var(--orange);line-height:1.25}
+.hardnumber-label{font-size:13px;color:var(--muted);font-weight:600;line-height:1.5}
 .mini-cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px;margin-bottom:var(--s6)}
 .mini-case{background:var(--petrol-dark);color:#fff;border-radius:var(--r-lg);overflow:hidden;position:relative;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease;box-shadow:var(--sh-md)}
 .mini-case:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
@@ -404,8 +408,8 @@ header{position:sticky;top:0;background:rgba(253,252,250,0.88);backdrop-filter:s
 
 /* ============ TEAM ============ */
 .team{background:var(--petrol-dark);color:#fff;padding:var(--sec) 0 var(--s8)}
-.team-text-centered{max-width:880px;margin:0 auto;text-align:center;padding-bottom:var(--s7);position:relative;z-index:2}
-.team-text-centered p{font-size:16.5px;line-height:1.75;color:rgba(255,255,255,0.78);max-width:760px;margin:0 auto var(--s4);font-weight:500}
+.team-text-centered{max-width:880px;text-align:left;padding-bottom:var(--s7);position:relative;z-index:2}
+.team-text-centered p{font-size:16.5px;line-height:1.75;color:rgba(255,255,255,0.78);max-width:760px;margin:0 0 var(--s4);font-weight:500}
 .team-text-centered p strong{color:var(--orange-bright);font-weight:700}
 .team-marquee-fullwidth{width:100%;position:relative;padding:8px 0;z-index:2}
 .team-marquee{position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:14px 0}
@@ -421,7 +425,7 @@ header{position:sticky;top:0;background:rgba(253,252,250,0.88);backdrop-filter:s
 
 /* ============ FAQ ============ */
 .faq{background:#fff;padding:var(--sec) 0}
-.faq-list{max-width:840px;margin:0 auto}
+.faq-list{max-width:840px;margin:0}
 .faq-item{border-bottom:1px solid var(--line)}
 .faq-item:first-child{border-top:1px solid var(--line)}
 .faq-q{width:100%;text-align:left;padding:26px 0;font-size:18px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:24px;line-height:1.4;letter-spacing:-0.015em;transition:color .2s ease}
@@ -450,10 +454,10 @@ header{position:sticky;top:0;background:rgba(253,252,250,0.88);backdrop-filter:s
 /* ============ FOOTER ============ */
 footer.site-footer{background:#062430;color:rgba(255,255,255,0.6);padding:var(--s8) 0 var(--s6);font-size:14px}
 .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:center;margin-bottom:var(--s6)}
-.footer-brand{display:flex;align-items:center;gap:14px}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .footer-brand .logo-mark{height:42px}
 .footer-brand .logo-mark img{filter:brightness(0) invert(1);opacity:.92}
-.footer-tag{font-size:12px;color:rgba(255,255,255,0.42);letter-spacing:0.04em}
+.footer-tag{font-size:12px;color:rgba(255,255,255,0.42);letter-spacing:0.04em;line-height:1.7;max-width:360px}
 .footer-links{display:flex;gap:26px;flex-wrap:wrap}
 .footer-links a{color:rgba(255,255,255,0.62);transition:color .15s ease;font-weight:500}
 .footer-links a:hover{color:#fff}
@@ -525,14 +529,12 @@ footer.site-footer{background:#062430;color:rgba(255,255,255,0.6);padding:var(--
 @media(max-width:900px){
   .cmp{display:block;background:none;border:none;box-shadow:none;overflow:visible;border-radius:0}
   .cmp-cell.head{display:none}
-  .cmp-cell{border-bottom:none}
-  .cmp-cell.crit{margin-top:18px;background:var(--petrol);color:#fff;border-radius:14px 14px 0 0;padding:13px 18px;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase}
-  .cmp-cell.classic,.cmp-cell.win{display:flex;flex-wrap:wrap;padding:13px 18px;border:1px solid var(--line);border-top:none}
-  .cmp-cell.classic{background:#fff}
-  .cmp-cell.classic::after{content:"Klassisches Recruiting";order:-1;flex-basis:100%;font-size:10px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .cmp-cell.win{background:#fff;border-radius:0 0 14px 14px;box-shadow:var(--sh-md)}
-  .cmp-cell.win::after{content:"360\00B0  BM Hiring System";order:-1;flex-basis:100%;font-size:10px;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
-  .cmp-cell.classic::before,.cmp-cell.win::before{display:none}
+  .cmp-cell{border-bottom:none;font-size:14px;line-height:1.4}
+  .cmp-cell.crit{margin-top:14px;background:var(--petrol);color:#fff;border-radius:12px 12px 0 0;padding:10px 16px;font-size:11.5px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase}
+  .cmp-cell.classic,.cmp-cell.win{display:flex;align-items:flex-start;gap:9px;padding:10px 16px;border:1px solid var(--line);border-top:none}
+  .cmp-cell.classic{background:#fff;color:var(--muted)}
+  .cmp-cell.win{background:rgba(232,122,40,0.05);border-radius:0 0 12px 12px;font-weight:700;color:var(--ink)}
+  .cmp-cell.classic::before,.cmp-cell.win::before{margin-top:5px}
 }
 
 /* ============ WARUM ES FUNKTIONIERT ============ */
@@ -851,8 +853,11 @@ footer.site-footer{background:#062430;color:rgba(255,255,255,0.6);padding:var(--
     <h2 class="section-title rv">Stellen besetzt, <span class="accent-i">wo andere gescheitert sind.</span></h2>
     <p class="section-sub rv" style="margin-bottom:24px">Eine Auswahl aus unseren IT-Cases &mdash; vom Bodensee bis Flensburg, vom Erzgebirge bis ins Saarland. Echte Firmen. Echte Stellen. Echte Ergebnisse.</p>
     <div class="hardnumber-pill rv">
-      <span class="hardnumber-value">Erste Kandidaten in 24 Stunden</span>
-      <span class="hardnumber-label">Nach dem Kick-Off &mdash; aus 50.000 wechselbereiten IT-Profilen, +3.000 neue pro Monat.</span>
+      <span class="hardnumber-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+      <span class="hardnumber-text">
+        <span class="hardnumber-value">Erste Kandidaten in 24 Stunden</span>
+        <span class="hardnumber-label">Nach dem Kick-Off &mdash; aus 50.000 wechselbereiten IT-Profilen, +3.000 neue pro Monat.</span>
+      </span>
     </div>
     <div class="cs-grid">
       <div class="cs-card rv"><img class="cs-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXAAAABiCAYAAABJcIgbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4MTdmNjA0My02MzVjLTQ4NmEtYTllYS1hMGY2YzFkZmI0ODgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjQ0QjM1RjZGMjQzMTFFNDlEMDNDODEzQzc1QzRBMTAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjQ0QjM1RjVGMjQzMTFFNDlEMDNDODEzQzc1QzRBMTAiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgSWxsdXN0cmF0b3IgQ0MgMjAxNCAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZhYWM4MzM3LTI4YjItNGUxNS04ZGZmLWY4ZDRmNDYwYTE1MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2YWFjODMzNy0yOGIyLTRlMTUtOGRmZi1mOGQ0ZjQ2MGEx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" alt="Systemhaus Tröndle GmbH"><span class="badge">IT-Systemhaus · Singen</span><div class="role">IT-Systemadministrator</div><div class="stats"><div class="stat"><b>18</b><span>qual. Bewerbungen</span></div><div class="stat"><b>4</b><span>Tage bis besetzt</span></div></div><span class="cs-hires"><span class="cs-hires-check">✓</span> 1 Einstellung</span></div>
@@ -1173,7 +1178,7 @@ footer.site-footer{background:#062430;color:rgba(255,255,255,0.6);padding:var(--
   <div class="container">
     <div class="team-text-centered">
       <span class="eyebrow on-dark rv"><span class="eyebrow-dot"></span>&Uuml;ber uns</span>
-      <h2 class="section-title on-dark rv" style="margin-left:auto;margin-right:auto">Spezialisiert auf eine Zukunftsbranche &mdash; <span class="accent-i">und das bleibt so.</span></h2>
+      <h2 class="section-title on-dark rv">Spezialisiert auf eine Zukunftsbranche &mdash; <span class="accent-i">und das bleibt so.</span></h2>
       <p class="rv">Wir sind Burner Marketing &mdash; eine spezialisierte IT-Recruiting-Agentur aus Erlangen, mitten in einer der dichtesten Tech- und Industrie-Regionen Deutschlands.</p>
       <p class="rv" style="--d:80ms">Wir arbeiten vor allem mit <strong>IT-Systemh&auml;usern, SaaS-Dienstleistern und IT-Beratungsh&auml;usern</strong> &mdash; und das wird so bleiben. Datensicherheit und digitales Arbeiten sind die Zukunft. Wir haben uns bewusst auf eine zukunftsweisende Branche spezialisiert, die <strong>konstanten Personalbedarf</strong> hat &mdash; und immer haben wird.</p>
     </div>
@@ -1401,7 +1406,7 @@ footer.site-footer{background:#062430;color:rgba(255,255,255,0.6);padding:var(--
     <span class="eyebrow"><span class="eyebrow-dot"></span>Der nächste Hebel</span>
     <h2 class="section-title">Die Stelle ist besetzt. <span class="accent-i">Was kommt danach?</span></h2>
     <p class="section-sub">Neue Mitarbeiter brauchen Auslastung — und eine Marke, die Bewerber wie Kunden anzieht. Genau da setzen die anderen zwei Hebel an.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
       <a href="https://burnermarketing.com/" style="display:block;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;transition:transform .25s,box-shadow .25s,border-color .25s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-md)';this.style.borderColor='var(--orange)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='var(--line)'">
         <h3 style="font-size:21px;font-weight:800;margin-bottom:8px">Neukundengewinnung →</h3>
         <p style="color:var(--muted);font-weight:500;font-size:15px">Sorgen Sie dafür, dass Ihre neuen Leute ausgelastet sind. Ein proaktiver Kanal für planbare, warme Anfragen.</p>
